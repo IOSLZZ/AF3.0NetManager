@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "NetWorkManager.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [NetWorkManager  get:@"http://c.m.163.com//nc/article/list/T1348649654285/0-20.html" params:nil success:^(NSURLSessionDataTask *task, id responseBody) {
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
+    
+    
+    [NetWorkManager startMonitoring];
     return YES;
 }
 
